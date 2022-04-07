@@ -40,6 +40,8 @@ main header {
           justify-content: center;
   -ms-flex-line-pack: justify;
       align-content: space-between;
+  position: relative;
+  z-index: 3;
 }
 
 main header h1 {
@@ -80,6 +82,8 @@ main section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  z-index: 1;
 }
 
 main section article {
@@ -89,6 +93,7 @@ main section article {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   position: relative;
+  cursor: pointer;
 }
 
 main section article::before {
@@ -222,5 +227,64 @@ main nav ul li {
 main nav ul li a {
   font-size: 20px;
   color: #bbb;
+}
+
+main aside {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 2;
+  padding: 5vw;
+  padding-left: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main aside.on {
+  opacity: 1;
+  left: 0%;
+}
+
+main aside .txtBox {
+  width: 25%;
+}
+
+main aside .txtBox h2 {
+  font: normal 110px/1 "alegreya sans SC";
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+main aside .txtBox p {
+  font: 16px/1.2 "arial";
+  color: #777;
+}
+
+main aside .vidBox {
+  width: 70%;
+  padding-top: 140px;
+}
+
+main aside .vidBox video {
+  width: 100%;
+}
+
+main aside .btnClose {
+  position: absolute;
+  top: 120px;
+  right: 6vw;
+  font: 16px/1 "arial";
+  color: orange;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

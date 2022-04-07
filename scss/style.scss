@@ -17,6 +17,9 @@ main {
         // 이해 안 감
         align-content: space-between;
 
+        position: relative;
+        z-index: 3;
+
         h1 {
             color: #fff;
             display: flex;
@@ -46,6 +49,8 @@ main {
         height: 100%;
         padding-top: 10vh;
         display: flex;
+        position: relative;
+        z-index: 1;
 
         article {
             // flex비율 이용해서 크기 설정
@@ -53,6 +58,7 @@ main {
             transition: 0.5s;
             // 가상선택자 위치설정을 위해서
             position: relative;
+            cursor: pointer;
 
             &::before {
                 // 가상선택자 사용시 필수
@@ -175,6 +181,64 @@ main {
                     color: #bbb;
                 }
             }
+        }
+    }
+    
+    aside {
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        position: absolute;
+        top: 0px;
+        // transform을 위해서 안보이게
+        left: -100%;
+        opacity: 0;
+        transition: 1s;
+
+        z-index: 2;
+        // 왼쪽만 20%
+        padding: 5vw;
+        padding-left: 20%;
+
+        // 좌우배치
+        display: flex;
+        justify-content: space-between;
+
+        // 자바스크립트로 설정
+        &.on {
+            opacity: 1;
+            left: 0%;
+        }
+
+        .txtBox {
+            width: 25%;
+
+            h2 {
+                font: normal 110px/1 "alegreya sans SC";
+                color: #ddd;
+                margin-bottom: 20px;
+            }
+            p {
+                font: 16px/1.2 "arial";
+                color: #777;
+            }
+        }
+        .vidBox {
+            width: 70%;
+            padding-top: 140px;
+
+            video {
+                width: 100%;
+            }
+        }
+
+
+        .btnClose {
+            position: absolute;
+            top: 120px;
+            right: 6vw;
+            font: 16px/1 "arial"; color: orange;
+            cursor: pointer;
         }
     }
 }
